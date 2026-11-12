@@ -58,9 +58,6 @@ export default function PostCard({ post, featured = false }: PostCardProps) {
                         fill
                         sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw"
                     />
-                    {post.contentType?.length ? (
-                        <span>{post.contentType.join(", ")}</span>
-                    ) : null}
                 </div>
             )}
             <h4>{post.title}</h4>
