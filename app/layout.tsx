@@ -2,7 +2,7 @@ import "./globals.css";
 import SiteLayout from "@/components/sitelayout/SiteLayout";
 
 export const metadata = {
-    title: "Arjun's Reading Room",
+    title: "From Arjun, For the Group Chat",
     description: "Thoughts, projects and writing from me, Arjun Kalburgi.",
     icons: {
         icon: [{ url: "/favicon.png", sizes: "any", type: "image/png" }],

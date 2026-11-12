@@ -61,3 +61,30 @@ div.post-container {
 .notion-text {
     padding: 15px 0;
 }
+
+.prose .table-of-contents {
+    margin-top: var(--prose-spacing-lg);
+    font-size: 0.8em;
+    line-height: 1.5;
+}
+
+.prose .table-of-contents ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.prose .table-of-contents__item--heading_3 {
+    padding-left: 1.5em;
+}
+
+.prose .table-of-contents a {
+    text-decoration: underline;
+    text-decoration-color: #d3d1cb;
+    text-underline-offset: 0.16em;
+}
+
+.prose .table-of-contents a:hover {
+    color: var(--title-color);
+    text-decoration-color: currentColor;
+}

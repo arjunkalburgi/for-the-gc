@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-    title: "Arjun's Reading Room",
+    title: "From Arjun, For the Group Chat",
     description: "Thoughts, projects and writing from me, Arjun Kalburgi.",
     icons: {
         icon: [{ url: "/logo.svg", type: "image/svg+xml" }],

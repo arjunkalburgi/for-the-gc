@@ -1,11 +1,26 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import NotionPage from '@/components/notion/NotionPage';
-import type { PostMeta } from '@/components/notion/types';
+import type { NotionBlock, PostMeta } from '@/components/notion/types';
 import type { ExtendedRecordMap } from 'notion-types';
 
 interface PageProps {
     params: Promise<{ slug: string }>;
+}
+
+function isBlockContent(value: unknown): value is { blocks: NotionBlock[] } {
+    return typeof value === 'object'
+        && value !== null
+        && 'blocks' in value
+        && Array.isArray(value.blocks);
+}
+
+function isRecordMap(value: unknown): value is ExtendedRecordMap {
+    return typeof value === 'object'
+        && value !== null
+        && 'block' in value
+        && typeof value.block === 'object'
+        && value.block !== null;
 }
 
 export async function generateStaticParams() {
@@ -24,6 +39,12 @@ export default async function PostPage(props: PageProps) {
     if (!meta) throw new Error(`Post metadata not found for slug: ${slug}`);
     
     const file = path.join(process.cwd(), 'data', 'posts', `${slug}.json`);
-    const recordMap: ExtendedRecordMap = JSON.parse(fs.readFileSync(file, 'utf8'));
-    return <NotionPage recordMap={recordMap} meta={meta} />;
+    const content: unknown = JSON.parse(fs.readFileSync(file, 'utf8'));
+    if (isBlockContent(content)) {
+        return <NotionPage blocks={content.blocks} meta={meta} />;
+    }
+    if (isRecordMap(content)) {
+        return <NotionPage recordMap={content} meta={meta} />;
+    }
+    throw new Error(`Notion content has an unsupported format for slug: ${slug}`);
 }

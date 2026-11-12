@@ -12,6 +12,7 @@
     
     --bg-color: #fbf8f3;
     --bg-colorlight: #fcfcfc;
+    --bg-colordark: #fbf8f3;
     
     --border-color: #f2e9da;
     --border-radius: 18px;
@@ -32,8 +33,8 @@
     /* Prose helpers */
     --prose-max-width: 70ch;
     --prose-line-height: 1.75;
-    --prose-spacing: 1rem;
-    --prose-spacing-lg: 1.5rem;
+    --prose-spacing: 2rem;
+    --prose-spacing-lg: 6rem;
 }
 
 /* Base element rules */
@@ -125,8 +126,7 @@ hr {
     max-width: var(--prose-max-width);
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-top: var(--prose-spacing-lg);
     line-height: var(--prose-line-height);
     word-wrap: break-word;
     overflow-wrap: anywhere;
@@ -159,7 +159,7 @@ hr {
 /* Lists */
 .prose ul,
 .prose ol {
-    margin: 0 0 var(--prose-spacing-lg);
+    margin: 0 0 var(--prose-spacing);
     padding-left: 1.25em;
 }
 
@@ -188,8 +188,8 @@ hr {
 /* Inline code */
 .prose code {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    font-size: 0.9em;
-    background: var(--bg-colorlight);
+    font-size: 0.7em;
+    background: var(--bg-colordark);
     padding: 0.15em 0.35em;
     border-radius: 6px;
     border: 1px solid var(--border-color);
@@ -200,7 +200,7 @@ hr {
     margin: var(--prose-spacing-lg) 0;
     padding: 1rem;
     overflow: auto;
-    background: var(--bg-colorlight);
+    background: var(--bg-colordark);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
 }
@@ -210,7 +210,7 @@ hr {
     padding: 0;     /* avoid double padding inside pre */
     border: 0;
     background: transparent;
-    font-size: 0.95em;
+    font-size: 0.7em;
 }
 
 /* Images & figures */
