@@ -53,12 +53,12 @@ body {
 }
 
 h1,
-h2,
-h3 {
-    font: var(--title);
+h2 {
+    font: var(--display);
     color: var(--brand-colour);
 }
 
+h3,
 h4,
 h5,
 h6 {
@@ -66,9 +66,32 @@ h6 {
     color: var(--title-color);
 }
 
-h2 {
-    font: var(--display);
+.site-header h1.logo .logo-text {
+    font: var(--alt-text);
+    font-size: 1.2rem;
+    color: var(--brand-colourdark);
+    padding-top: 0.3rem;
 }
+
+.site-header h1.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    position: relative;
+}
+
+.site-header:hover h1.logo::after {
+    content: "";
+    position: absolute;
+    left: 2.4rem; /* start x position */
+    top: calc(100% - 0.5rem); /* start y position */
+    width: 12.9rem; /* length */
+    height: 2px;
+    background-color: var(--brand-colourdark);
+    pointer-events: none;
+}
+
 
 a {
     color: var(--brand-colourdark);
@@ -146,9 +169,9 @@ hr {
     margin-bottom: 0.6em;
 }
 
-.prose h1 { font-size: clamp(2rem, 5vw, 2.8rem); }
-.prose h2 { font-size: clamp(1.6rem, 4vw, 2.4rem); }
-.prose h3 { font-size: clamp(1.3rem, 3vw, 1.8rem); }
+.prose h1 { font-size: clamp(2.5rem, 5vw, 2.8rem); }
+.prose h2 { font-size: clamp(2rem, 4vw, 2.4rem); }
+.prose h3 { font-size: clamp(1.6rem, 3vw, 1.8rem); }
 .prose h4 { font-size: 1.2rem; }
 
 /* Paragraphs */
@@ -256,7 +279,8 @@ hr {
 /* Links inside prose */
 .prose a {
     color: var(--brand-colourdark);
-    text-decoration: underline;
+    text-decoration-color: var(--brand-colourlight);
+    text-decoration-line: underline;
     text-underline-offset: 2px;
 }
 

@@ -17,9 +17,9 @@ export default function Home() {
             <div className="intro">
                 <h2>For the Group Chat</h2>
                 <p>
-                    I think by building frameworks, even if it&apos;s for getting dressed or getting out of bed. This is where I write
-                    them down, so I can send them to the group chat. Together we can work out better ways to connect with 
-                    ourselves, each other and live our lives.
+                    I think by building frameworks, even if it&apos;s for reading books or getting out of bed. This is where I write
+                    them down, so I can send them to the group chat. This way, we can discuss them together - figuring out better ways
+                    to connect with ourselves, and live our lives.
                 </p>
             </div>
 

@@ -6,14 +6,6 @@ import { animate } from "@arjunanimations/leaves";
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata = {
-    title: "From Arjun, For the Group Chat",
-    description: "Thoughts, projects and writing from me, Arjun Kalburgi.",
-    icons: {
-        icon: [{ url: "/logo.svg", type: "image/svg+xml" }],
-    }
-};
-
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
     const [isIOS, setIsIOS] = useState(false);
     const [prefersReduced, setPrefersReduced] = useState(false);
@@ -57,9 +49,10 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
     return (
         <div className="layout">
             <header className="site-header">
-                <Link href="https://arjunkalburgi.com" aria-label="Writing homepage">
+                <Link href="https://arjunkalburgi.com/for-the-gc" aria-label="For-The-Group-Chat homepage">
                     <h1 className="logo">
                         <img src="/logo.svg" alt="Arjun Kalburgi's icon" />
+                        <span className="logo-text">for the gc</span>
                     </h1>
                 </Link>
             </header>
