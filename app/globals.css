@@ -66,33 +66,6 @@ h6 {
     color: var(--title-color);
 }
 
-.site-header h1.logo .logo-text {
-    font: var(--alt-text);
-    font-size: 1.2rem;
-    color: var(--brand-colourdark);
-    padding-top: 0.3rem;
-}
-
-.site-header h1.logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin: 1rem 0;
-    position: relative;
-}
-
-.site-header:hover h1.logo::after {
-    content: "";
-    position: absolute;
-    left: 2.4rem; /* start x position */
-    top: calc(100% - 0.5rem); /* start y position */
-    width: 12.9rem; /* length */
-    height: 2px;
-    background-color: var(--brand-colourdark);
-    pointer-events: none;
-}
-
-
 a {
     color: var(--brand-colourdark);
     text-decoration: none;
